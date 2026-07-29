@@ -717,28 +717,41 @@ footer a:focus-visible::after {
 .portability-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
+  gap: clamp(14px, 1.5vw, 24px);
 }
 
 .portability-grid article {
-  min-height: 420px;
-  padding: 40px clamp(24px, 3vw, 52px) 34px 0;
-  display: flex;
-  flex-direction: column;
+  min-width: 0;
+  padding-bottom: 28px;
 }
 
 .portability-grid article + article {
-  padding-left: clamp(24px, 3vw, 52px);
-  border-left: 1px solid var(--line);
+  padding-left: 0;
+  border-left: 0;
+}
+
+.portability-grid img {
+  width: 100%;
+  height: clamp(220px, 24vw, 360px);
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.portability-grid article:hover img {
+  transform: scale(1.012);
 }
 
 .portability-grid strong {
-  margin-bottom: auto;
+  display: block;
+  margin-top: 24px;
   font-family: var(--display-font);
-  font-size: clamp(78px, 9vw, 150px);
+  font-size: clamp(54px, 5vw, 88px);
   font-weight: 250;
-  line-height: 0.92;
-  letter-spacing: -0.065em;
+  line-height: 1;
+  letter-spacing: -0.055em;
 }
 
 .portability-grid strong span {
@@ -749,7 +762,7 @@ footer a:focus-visible::after {
 }
 
 .portability-grid h3 {
-  margin: 46px 0 12px;
+  margin: 18px 0 10px;
   font-size: clamp(20px, 1.7vw, 28px);
   font-weight: 450;
   letter-spacing: -0.035em;
@@ -982,11 +995,12 @@ footer a:focus-visible::after {
   bottom: 34px;
   left: max(3vw, 28px);
   min-height: 142px;
-  padding: 18px 22px 18px 26px;
+  padding: 18px 26px;
   display: grid;
-  grid-template-columns: 1fr minmax(480px, 0.9fr);
+  grid-template-columns: 1fr;
+  justify-items: center;
   align-items: center;
-  gap: 34px;
+  gap: 14px;
   border: 1px solid rgb(255 255 255 / 58%);
   border-radius: 22px;
   background: rgb(247 247 245 / 74%);
@@ -999,7 +1013,9 @@ footer a:focus-visible::after {
   display: grid;
   grid-template-columns: auto auto 1fr;
   align-items: baseline;
+  justify-content: center;
   gap: 14px;
+  text-align: center;
 }
 
 .color-description span {
@@ -1023,6 +1039,7 @@ footer a:focus-visible::after {
 }
 
 .color-buttons {
+  width: min(760px, 100%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -1044,6 +1061,10 @@ footer a:focus-visible::after {
   transition:
     color 220ms ease,
     background 220ms ease;
+}
+
+.color-buttons button:first-child {
+  border-left: 0;
 }
 
 .color-buttons button::after {
@@ -1085,13 +1106,11 @@ footer a:focus-visible::after {
 }
 
 .color-lineup-wordmark {
-  position: absolute;
-  z-index: 3;
-  right: 3vw;
-  bottom: 38px;
+  display: block;
+  margin: 0 0 24px;
   color: rgb(216 255 69 / 86%);
   font-family: var(--display-font);
-  font-size: clamp(68px, 7.2vw, 122px);
+  font-size: clamp(48px, 5vw, 82px);
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.065em;
@@ -1443,18 +1462,20 @@ footer small {
   }
 
   .portability-grid article {
-    min-height: 330px;
-    padding: 36px 0;
+    padding: 0 0 48px;
   }
 
   .portability-grid article + article {
     padding-left: 0;
-    border-top: 1px solid var(--line);
     border-left: 0;
   }
 
+  .portability-grid img {
+    height: clamp(260px, 72vw, 420px);
+  }
+
   .portability-grid strong {
-    font-size: clamp(88px, 25vw, 138px);
+    font-size: clamp(68px, 20vw, 112px);
   }
 
   .everyday-scenes {
@@ -1529,6 +1550,7 @@ footer small {
 
   .color-description {
     grid-template-columns: auto auto;
+    justify-content: center;
   }
 
   .color-description p {
@@ -1545,9 +1567,8 @@ footer small {
   }
 
   .color-lineup-wordmark {
-    right: 18px;
-    bottom: 28px;
-    font-size: clamp(52px, 13vw, 92px);
+    margin-bottom: 18px;
+    font-size: clamp(42px, 12vw, 70px);
   }
 
   .color-lineup > img {
