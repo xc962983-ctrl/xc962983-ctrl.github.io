@@ -31,6 +31,24 @@ const colorways = [
   },
 ];
 
+const designPrinciples = [
+  {
+    label: "COMPACT",
+    title: "30% 更精简",
+    note: "缩小体积，不缩减风感。日常随身的比例被重新计算。",
+  },
+  {
+    label: "PRECISE",
+    title: "01—100 连续调节",
+    note: "滚轮控制让风不再只有强弱，而是准确停在舒服的位置。",
+  },
+  {
+    label: "EVERYDAY",
+    title: "180g 轻松随行",
+    note: "一手拿起，放进小包，让清凉自然进入通勤与旅行。",
+  },
+];
+
 function describeWind(level) {
   if (level <= 30) return windDescriptions.light;
   if (level <= 70) return windDescriptions.daily;
@@ -94,6 +112,45 @@ colorButtons.forEach((button) => {
       item.setAttribute("aria-pressed", String(active));
     });
   });
+});
+
+const statementSection = document.querySelector(".brand-statement");
+const statementProduct = document.querySelector(".statement-product");
+const principleButtons = document.querySelectorAll("[data-principle]");
+const principleLabel = document.querySelector("#principle-label");
+const principleTitle = document.querySelector("#principle-title");
+const principleNote = document.querySelector("#principle-note");
+
+function selectPrinciple(index) {
+  const principle = designPrinciples[index];
+  principleLabel.textContent = principle.label;
+  principleTitle.textContent = principle.title;
+  principleNote.textContent = principle.note;
+
+  principleButtons.forEach((button) => {
+    const active = Number(button.dataset.principle) === index;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+principleButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectPrinciple(Number(button.dataset.principle));
+  });
+});
+
+statementSection?.addEventListener("pointermove", (event) => {
+  if (!statementProduct || reducedMotion) return;
+  const rect = statementSection.getBoundingClientRect();
+  const x = (event.clientX - rect.left) / rect.width - 0.5;
+  const y = (event.clientY - rect.top) / rect.height - 0.5;
+  statementProduct.style.transform =
+    `translate3d(${x * 16}px, ${y * 12}px, 0) rotate(${x * 2.2}deg)`;
+});
+
+statementSection?.addEventListener("pointerleave", () => {
+  if (statementProduct) statementProduct.style.transform = "";
 });
 
 const revealElements = document.querySelectorAll("[data-reveal]");
