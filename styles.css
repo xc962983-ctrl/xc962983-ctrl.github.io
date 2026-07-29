@@ -445,10 +445,12 @@ p {
 }
 
 .brand-statement h2 {
+  width: 100%;
   max-width: 1080px;
   margin-inline: auto;
   font-size: clamp(68px, 7.2vw, 124px);
   line-height: 1.08;
+  transform: translateX(clamp(24px, 2.1vw, 44px));
 }
 
 .brand-statement h2 span {
@@ -1649,6 +1651,10 @@ footer small {
 }
 
 @media (max-width: 520px) {
+  .brand-statement h2 {
+    transform: translateX(8px);
+  }
+
   .site-header {
     height: 56px;
     padding-left: 16px;
