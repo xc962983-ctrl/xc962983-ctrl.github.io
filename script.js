@@ -9,16 +9,25 @@ const colorways = [
     label: "Starlight",
     name: "星光白",
     finish: "清透、安静，像晨光落在银器上。",
+    image: "./color-starlight-v2.png",
+    alt: "星光白 Pro1 Mini 单品展示",
+    dark: false,
   },
   {
     label: "Velvet",
     name: "丝绒黑",
     finish: "低调的深色轮廓，衬出细腻金属光泽。",
+    image: "./color-velvet-v2.png",
+    alt: "丝绒黑 Pro1 Mini 单品展示",
+    dark: true,
   },
   {
     label: "Mist",
     name: "冷雾紫",
     finish: "一抹克制的雾紫，让随身清凉更有风格。",
+    image: "./color-mist-v2.png",
+    alt: "冷雾紫 Pro1 Mini 单品展示",
+    dark: false,
   },
 ];
 
@@ -66,6 +75,8 @@ const colorButtons = document.querySelectorAll("[data-color]");
 const colorLabel = document.querySelector("#color-label");
 const colorName = document.querySelector("#color-name");
 const colorFinish = document.querySelector("#color-finish");
+const colorImage = document.querySelector("#color-product-image");
+const colorSection = document.querySelector("#colors");
 
 colorButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -73,6 +84,9 @@ colorButtons.forEach((button) => {
     colorLabel.textContent = color.label;
     colorName.textContent = color.name;
     colorFinish.textContent = color.finish;
+    colorImage.src = color.image;
+    colorImage.alt = color.alt;
+    colorSection.classList.toggle("is-dark", color.dark);
 
     colorButtons.forEach((item) => {
       const active = item === button;

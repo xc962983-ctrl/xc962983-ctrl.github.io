@@ -47,18 +47,12 @@
       </header>
 
       <section class="hero" id="top">
-        <picture>
-          <source
-            media="(max-width: 700px)"
-            srcset="./hero-mobile.png"
-          />
-          <img
-            class="hero-visual"
-            src="./hero-desktop.png"
-            alt="几素 Pro1 Mini 手持风扇与银色手袋、香水和紫色花艺陈列在桌面"
-            fetchpriority="high"
-          />
-        </picture>
+        <img
+          class="hero-visual"
+          src="./hero-editorial-rich-v2.png"
+          alt="几素 Pro1 Mini 与百合、书籍、银色桌面和雾紫配色产品组成的编辑式陈列"
+          fetchpriority="high"
+        />
         <div class="hero-shade"></div>
         <div class="hero-content" id="content" data-reveal>
           <p class="eyebrow">JISULIFE · PRO1 MINI</p>
@@ -139,14 +133,19 @@
               <strong id="wind-percent">64%</strong>
             </div>
           </div>
+          <div class="performance-facts" aria-label="风力结构参数">
+            <span><strong>7.6</strong><small>m/s 强劲风速</small></span>
+            <span><strong>5</strong><small>叶涡轮扇组</small></span>
+            <span><strong>100</strong><small>档连续调节</small></span>
+          </div>
         </div>
       </section>
 
       <section class="lifestyle" id="lifestyle">
         <div class="lifestyle-image" data-reveal>
           <img
-            src="./commute-lifestyle.png"
-            alt="夏日通勤中的女性自然使用几素 Pro1 Mini 手持风扇"
+            src="./commute-lifestyle-selected.png"
+            alt="城市露台上的女性自然使用几素 Pro1 Mini 手持风扇"
             loading="lazy"
           />
           <span>SUMMER COMMUTE · DAILY COOL</span>
@@ -162,6 +161,57 @@
             <span><strong>30H</strong>长效续航</span>
           </div>
         </div>
+      </section>
+
+      <section class="portability" aria-label="便携参数">
+        <p class="section-index" data-reveal>MINI, MADE TO MOVE</p>
+        <div class="portability-grid">
+          <article data-reveal>
+            <strong>180<span>g</span></strong>
+            <h3>轻至随手拿起</h3>
+            <p>一手刚好的重量，出门不再多一份负担。</p>
+          </article>
+          <article data-reveal>
+            <strong>30<span>%</span></strong>
+            <h3>体积精简</h3>
+            <p>更小的机身比例，为通勤包留出更多空间。</p>
+          </article>
+          <article data-reveal>
+            <strong>1<span> BAG</span></strong>
+            <h3>小包也能装</h3>
+            <p>拿起、收进、出发，清凉自然融入日常。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="everyday-scenes" aria-label="日常使用场景">
+        <div class="scenes-heading" data-reveal>
+          <p class="section-index">WHEREVER THE DAY GOES</p>
+          <h2>从客厅，<br />到街头。</h2>
+          <p>风不只存在于参数里，也存在于每一个真实、松弛的日常瞬间。</p>
+        </div>
+        <figure class="scene-card scene-card-home" data-reveal>
+          <img
+            src="./home-lifestyle-v2.png"
+            alt="女性在深蓝色客厅沙发上休息并使用 Pro1 Mini"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>01 / AT HOME</span>
+            <strong>在家，安静地吹风。</strong>
+          </figcaption>
+        </figure>
+        <figure class="scene-card scene-card-outdoor" data-reveal>
+          <img
+            src="./outdoor-lifestyle-v2.png"
+            alt="女性在夏日城市街道步行时使用 Pro1 Mini"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>02 / OUTSIDE</span>
+            <strong>出门，轻松地随行。</strong>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="feature feature-aroma is-aroma-on" id="aroma">
@@ -214,9 +264,10 @@
 
       <section class="feature feature-colors" id="colors">
         <img
+          id="color-product-image"
           class="feature-image"
-          src="./colorways-editorial-selected.png"
-          alt="星光白、丝绒黑与冷雾紫三款 Pro1 Mini 陈列在冷白矿物展台"
+          src="./color-starlight-v2.png"
+          alt="星光白 Pro1 Mini 单品展示"
           loading="lazy"
         />
         <div class="feature-copy" data-reveal>
@@ -252,6 +303,19 @@
               <span>冷雾紫</span>
             </button>
           </div>
+        </div>
+      </section>
+
+      <section class="color-lineup">
+        <img
+          src="./colorways-editorial-selected.png"
+          alt="星光白、丝绒黑与冷雾紫三款 Pro1 Mini 组合陈列"
+          loading="lazy"
+        />
+        <div class="color-lineup-copy" data-reveal>
+          <p class="section-index">THE FULL PALETTE</p>
+          <h2>三种颜色，<br />一种轻盈。</h2>
+          <p>克制的中性色与一抹雾紫，让产品自然进入穿搭、桌面与旅途。</p>
         </div>
       </section>
 
