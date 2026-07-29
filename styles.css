@@ -256,6 +256,11 @@ footer a:focus-visible::after {
   font-weight: 300;
   line-height: 1.06;
   letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .hero h1 {
@@ -329,7 +334,7 @@ footer a:focus-visible::after {
   font-family: var(--display-font);
   font-size: 24px;
   font-weight: 450;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
 }
 
 .hero-wordmark {
@@ -428,6 +433,14 @@ footer a:focus-visible::after {
   z-index: 2;
   width: min(1080px, 84vw);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statement-intro .section-index {
+  width: 100%;
   text-align: center;
 }
 
@@ -444,7 +457,7 @@ footer a:focus-visible::after {
 }
 
 .statement-note {
-  max-width: 620px;
+  max-width: 760px;
   margin: 48px auto 0;
   color: var(--ink-soft);
   font-size: clamp(16px, 1.3vw, 20px);
@@ -501,7 +514,13 @@ footer a:focus-visible::after {
   font-size: clamp(120px, 16vw, 260px);
   font-weight: 200;
   line-height: 0.84;
-  letter-spacing: -0.075em;
+  letter-spacing: 0.015em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.performance-title {
+  font-size: clamp(54px, 5.8vw, 94px) !important;
+  white-space: nowrap;
 }
 
 .wind-control {
@@ -598,7 +617,7 @@ footer a:focus-visible::after {
   font-size: clamp(26px, 2.5vw, 42px);
   font-weight: 350;
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .performance-facts small {
@@ -661,7 +680,12 @@ footer a:focus-visible::after {
 }
 
 .lifestyle-copy h2 {
-  font-size: clamp(54px, 6vw, 96px);
+  font-size: clamp(52px, 5.3vw, 86px);
+}
+
+.lifestyle-copy h2 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .lifestyle-copy > p:not(.section-index) {
@@ -702,7 +726,7 @@ footer a:focus-visible::after {
   font-family: var(--display-font);
   font-size: 34px;
   font-weight: 350;
-  letter-spacing: -0.06em;
+  letter-spacing: 0;
 }
 
 .portability {
@@ -751,11 +775,12 @@ footer a:focus-visible::after {
   font-size: clamp(54px, 5vw, 88px);
   font-weight: 250;
   line-height: 1;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .portability-grid strong span {
-  margin-left: 0.08em;
+  margin-left: 0.16em;
   font-size: 0.25em;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -955,7 +980,19 @@ footer a:focus-visible::after {
   font-size: clamp(80px, 9vw, 152px);
   font-weight: 250;
   line-height: 0.9;
-  letter-spacing: -0.065em;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.hero-specs strong,
+.wind-control label span,
+.wind-readout strong,
+.performance-facts strong,
+.micro-specs strong,
+.portability-grid strong,
+.spec-ledger strong,
+.final-meta {
+  font-variant-numeric: tabular-nums lining-nums;
 }
 
 .spec-ledger p {
@@ -1664,6 +1701,10 @@ footer small {
   .feature-copy h2,
   .lifestyle-copy h2 {
     font-size: clamp(50px, 14.5vw, 70px);
+  }
+
+  .lifestyle-copy h2 {
+    font-size: clamp(44px, 12vw, 58px);
   }
 
   .feature-image {
