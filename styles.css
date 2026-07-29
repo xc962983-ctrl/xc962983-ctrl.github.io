@@ -407,27 +407,21 @@ footer a:focus-visible::after {
   min-height: 100svh;
   padding: clamp(120px, 11vw, 180px) max(5vw, 28px) 72px;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 1fr);
   grid-template-rows: 1fr auto;
   align-content: center;
   column-gap: 4vw;
   row-gap: 38px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 76% 36%, rgb(255 255 255 / 72%), transparent 27%),
-    linear-gradient(180deg, #a9c7dc 0%, #c8d9e5 66%, #eef0f1 100%);
+  background: linear-gradient(180deg, #a9c7dc 0%, #c8d9e5 66%, #eef0f1 100%);
 }
 
 .brand-statement::before {
-  content: "AIR, REFINED";
+  content: "";
   position: absolute;
-  top: 92px;
-  right: max(5vw, 28px);
-  color: rgb(23 24 22 / 36%);
-  font-family: var(--utility-font);
-  font-size: 10px;
-  font-weight: 650;
-  letter-spacing: 0.18em;
+  inset: 0;
+  background: linear-gradient(112deg, rgb(255 255 255 / 18%), transparent 46%);
+  pointer-events: none;
 }
 
 .statement-intro {
@@ -458,7 +452,7 @@ footer a:focus-visible::after {
 .statement-product {
   position: relative;
   z-index: 1;
-  width: min(38vw, 510px);
+  width: min(47vw, 690px);
   align-self: center;
   justify-self: center;
   transition: transform 260ms ease-out;
@@ -468,111 +462,32 @@ footer a:focus-visible::after {
 .statement-product > img {
   position: relative;
   z-index: 2;
-  width: 72%;
-  max-height: 68svh;
+  width: 92%;
+  max-height: 72svh;
   margin: auto;
   object-fit: contain;
   filter: drop-shadow(0 34px 30px rgb(39 46 51 / 16%));
+  transform: scale(1.55);
 }
 
-.product-orbit {
+.statement-wordmark {
   position: absolute;
   z-index: 0;
-  top: 49%;
+  top: 51%;
   left: 50%;
-  width: 112%;
-  aspect-ratio: 1;
-  border: 1px solid rgb(23 24 22 / 16%);
-  border-radius: 50%;
+  color: rgb(255 255 255 / 28%);
+  font-family: var(--display-font);
+  font-size: clamp(82px, 9.2vw, 154px);
+  font-weight: 600;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  white-space: nowrap;
   transform: translate(-50%, -50%);
 }
 
-.product-orbit::before,
-.product-orbit::after {
-  content: "";
-  position: absolute;
-  inset: 12%;
-  border: 1px solid rgb(23 24 22 / 11%);
-  border-radius: inherit;
-}
-
-.product-orbit::after {
-  inset: 25%;
-  border-color: rgb(216 255 69 / 70%);
-}
-
-.principle-hotspot {
-  position: absolute;
-  z-index: 4;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-}
-
-.principle-hotspot i {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  border: 4px solid var(--lime);
-  border-radius: 50%;
-  background: var(--ink);
-  box-shadow: 0 0 0 1px rgb(23 24 22 / 20%);
-  transition: transform 220ms ease;
-}
-
-.principle-hotspot i::after {
-  content: "";
-  position: absolute;
-  inset: -9px;
-  border: 1px solid rgb(23 24 22 / 24%);
-  border-radius: inherit;
-  transform: scale(0.65);
-  opacity: 0;
-  transition: 220ms ease;
-}
-
-.principle-hotspot span {
-  padding: 8px 11px;
-  border: 1px solid rgb(255 255 255 / 70%);
-  border-radius: 999px;
-  background: rgb(250 250 248 / 70%);
-  box-shadow: 0 8px 26px rgb(23 24 22 / 8%);
-  font-size: 11px;
-  font-weight: 650;
-  backdrop-filter: blur(16px);
-}
-
-.principle-hotspot:hover i,
-.principle-hotspot:focus-visible i,
-.principle-hotspot.is-active i {
-  transform: scale(1.16);
-}
-
-.principle-hotspot.is-active i::after {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.hotspot-1 {
-  top: 19%;
-  right: 1%;
-}
-
-.hotspot-2 {
-  top: 52%;
-  left: 0;
-}
-
-.hotspot-3 {
-  right: 6%;
-  bottom: 16%;
-}
-
 .principle-panel {
+  position: relative;
+  z-index: 3;
   grid-column: 1 / -1;
   min-height: 122px;
   padding: 24px 0 0;
@@ -604,23 +519,50 @@ footer a:focus-visible::after {
   line-height: 1.75;
 }
 
-.principle-panel > div {
+.principle-tabs {
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 24px;
 }
 
-.principle-panel > div button {
-  width: 34px;
-  height: 5px;
-  padding: 0;
+.principle-tabs button {
+  position: relative;
+  padding: 0 0 7px;
   border: 0;
-  background: rgb(23 24 22 / 18%);
-  transition: width 220ms ease, background 220ms ease;
+  background: transparent;
+  color: rgb(23 24 22 / 48%);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 180ms ease;
 }
 
-.principle-panel > div button.is-active {
-  width: 58px;
-  background: var(--ink);
+.principle-tabs button::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.principle-tabs button:hover,
+.principle-tabs button:focus-visible,
+.principle-tabs button.is-active {
+  color: var(--ink);
+}
+
+.principle-tabs button:focus-visible {
+  outline: none;
+}
+
+.principle-tabs button:focus-visible::after,
+.principle-tabs button.is-active::after {
+  transform: scaleX(1);
 }
 
 .feature {
@@ -877,16 +819,34 @@ footer a:focus-visible::after {
 }
 
 .portability {
+  position: relative;
   padding: clamp(100px, 11vw, 170px) max(5vw, 28px);
+  overflow: hidden;
   background: #f3f1ed;
 }
 
 .portability-heading {
+  position: relative;
+  z-index: 1;
   margin-bottom: clamp(48px, 6vw, 86px);
   display: grid;
   grid-template-columns: 0.65fr 1fr;
   align-items: end;
   gap: 4vw;
+}
+
+.portability-wordmark {
+  position: absolute;
+  z-index: -1;
+  top: -0.16em;
+  right: -0.02em;
+  color: rgb(23 24 22 / 6%);
+  font-family: var(--display-font);
+  font-size: clamp(110px, 14vw, 230px);
+  font-weight: 600;
+  line-height: 0.75;
+  letter-spacing: -0.085em;
+  white-space: nowrap;
 }
 
 .portability-heading .section-index {
@@ -897,10 +857,15 @@ footer a:focus-visible::after {
 .portability-heading h2 {
   margin: 0;
   font-family: var(--display-font);
-  font-size: clamp(58px, 7vw, 112px);
+  font-size: clamp(54px, 5.4vw, 90px);
   font-weight: 300;
   line-height: 0.94;
   letter-spacing: -0.07em;
+  white-space: nowrap;
+}
+
+.portability-heading h2 span + span {
+  margin-left: 0.12em;
 }
 
 .portability-heading > p:last-child {
@@ -1324,6 +1289,21 @@ footer a:focus-visible::after {
   background: #efeeec;
 }
 
+.color-lineup-wordmark {
+  position: absolute;
+  z-index: 3;
+  top: 96px;
+  right: -1.2vw;
+  color: var(--lime);
+  font-family: var(--display-font);
+  font-size: clamp(84px, 10.4vw, 176px);
+  font-weight: 600;
+  line-height: 0.76;
+  letter-spacing: -0.085em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 .color-lineup > img {
   width: 100%;
   min-height: 100svh;
@@ -1597,13 +1577,17 @@ footer small {
   }
 
   .statement-product {
-    width: min(82vw, 480px);
-    min-height: 580px;
+    width: min(92vw, 620px);
+    min-height: 540px;
   }
 
   .statement-product > img {
-    width: 66%;
-    max-height: 570px;
+    width: 88%;
+    max-height: 540px;
+  }
+
+  .statement-wordmark {
+    font-size: clamp(92px, 25vw, 156px);
   }
 
   .principle-panel {
@@ -1619,6 +1603,10 @@ footer small {
   .principle-panel > div {
     grid-column: 1 / -1;
     margin-top: 12px;
+  }
+
+  .principle-tabs {
+    gap: 30px;
   }
 
   .feature {
@@ -1698,6 +1686,15 @@ footer small {
 
   .portability-heading h2 {
     font-size: clamp(54px, 13vw, 86px);
+    white-space: normal;
+  }
+
+  .portability-heading h2 span {
+    display: block;
+  }
+
+  .portability-heading h2 span + span {
+    margin-left: 0;
   }
 
   .portability-bento {
@@ -1802,6 +1799,12 @@ footer small {
     min-height: 820px;
   }
 
+  .color-lineup-wordmark {
+    top: 82px;
+    right: -3vw;
+    font-size: clamp(64px, 15vw, 112px);
+  }
+
   .color-lineup > img {
     min-height: 820px;
     object-position: 62% center;
@@ -1883,16 +1886,12 @@ footer small {
   }
 
   .statement-product {
-    min-height: 500px;
+    min-height: 450px;
   }
 
   .statement-product > img {
-    width: 70%;
-    max-height: 480px;
-  }
-
-  .principle-hotspot span {
-    font-size: 10px;
+    width: 88%;
+    max-height: 450px;
   }
 
   .portability-card,

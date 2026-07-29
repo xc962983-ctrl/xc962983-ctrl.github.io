@@ -101,31 +101,22 @@
         </div>
 
         <div class="statement-product" data-reveal>
-          <span class="product-orbit" aria-hidden="true"></span>
+          <span class="statement-wordmark" aria-hidden="true">REFINED</span>
           <img
             src="./pro1-mini-starlight.png"
             alt="星光白 Pro1 Mini 产品轮廓"
             loading="lazy"
           />
-          <button class="principle-hotspot hotspot-1 is-active" type="button" data-principle="0" aria-pressed="true">
-            <i aria-hidden="true"></i><span>更小</span>
-          </button>
-          <button class="principle-hotspot hotspot-2" type="button" data-principle="1" aria-pressed="false">
-            <i aria-hidden="true"></i><span>更准</span>
-          </button>
-          <button class="principle-hotspot hotspot-3" type="button" data-principle="2" aria-pressed="false">
-            <i aria-hidden="true"></i><span>更日常</span>
-          </button>
         </div>
 
         <div class="principle-panel" data-reveal aria-live="polite">
           <span id="principle-label">COMPACT</span>
           <strong id="principle-title">30% 更精简</strong>
           <p id="principle-note">缩小体积，不缩减风感。日常随身的比例被重新计算。</p>
-          <div role="group" aria-label="选择设计特点">
-            <button class="is-active" type="button" data-principle="0" aria-pressed="true" aria-label="查看更小"></button>
-            <button type="button" data-principle="1" aria-pressed="false" aria-label="查看更准"></button>
-            <button type="button" data-principle="2" aria-pressed="false" aria-label="查看更日常"></button>
+          <div class="principle-tabs" role="group" aria-label="选择设计特点">
+            <button class="is-active" type="button" data-principle="0" aria-pressed="true">更小</button>
+            <button type="button" data-principle="1" aria-pressed="false">更准</button>
+            <button type="button" data-principle="2" aria-pressed="false">更日常</button>
           </div>
         </div>
       </section>
@@ -197,7 +188,8 @@
       <section class="portability" aria-label="便携参数">
         <div class="portability-heading" data-reveal>
           <p class="section-index">MINI, MADE TO MOVE</p>
-          <h2>Mini，轻盈上场。</h2>
+          <span class="portability-wordmark" aria-hidden="true">MADE TO MOVE</span>
+          <h2><span>Mini，</span><span>轻盈上场。</span></h2>
           <p>轻，不只是一组数字；是拿起、收进小包、随时出发的自然动作。</p>
         </div>
         <div class="portability-bento">
@@ -351,6 +343,7 @@
       </section>
 
       <section class="color-lineup">
+        <span class="color-lineup-wordmark" aria-hidden="true">THREE COLORS</span>
         <img
           src="./colorways-editorial-selected.png"
           alt="星光白、丝绒黑与冷雾紫三款 Pro1 Mini 组合陈列"
